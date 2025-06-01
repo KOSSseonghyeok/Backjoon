@@ -10,7 +10,7 @@ int main(void){
     cin >> num;
     int make = 0;
     int sum;
-    for(int i = 0; i < num; i++){
+    for(int i = max(0, num - int(to_string(num).length()*9)); i < num; i++){
         sum = 0;
         int i1 = i;
         for(int j = 0; j < to_string(i).length(); j++){
