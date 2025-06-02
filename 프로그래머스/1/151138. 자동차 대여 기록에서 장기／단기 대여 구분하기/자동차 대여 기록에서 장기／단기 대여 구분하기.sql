@@ -1,0 +1,9 @@
+-- 코드를 입력하세요
+SELECT HISTORY_ID, CAR_ID, DATE_FORMAT(START_DATE, '%Y-%m-%d') START_DATE, DATE_FORMAT(END_DATE, '%Y-%m-%d') END_DATE,
+    case 
+    when TIMESTAMPDIFF(DAY,  start_date, end_date) >= 29 then '장기 대여'
+    else '단기 대여'
+    end RENT_TYPE
+FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY
+WHERE START_DATE LIKE '2022-09%'
+ORDER BY HISTORY_ID DESC;
